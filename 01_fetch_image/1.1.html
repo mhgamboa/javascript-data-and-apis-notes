@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data & APIs 1</title>
+  </head>
+  <body>
+    <img src="" alt="rainbow" id="rainbow" />
+    <img src="" alt="rainbow" id="rainbow2" />
+    <script>
+      const rainbow = document.querySelector("#rainbow");
+      const rainbow2 = document.querySelector("#rainbow2");
+
+      // Using Fetch
+      fetch("rainbow.jpg")
+        .then((response) => response.blob())
+        .then((blob) => (rainbow.src = URL.createObjectURL(blob)))
+        .catch((error) => {
+          console.log("error");
+          console.error(error);
+        });
+
+      // Using async/await
+      const catchRainbow2 = async () => {
+        const response = await fetch("rainbow.jpg");
+        const blob = await response.blob();
+        rainbow2.src = URL.createObjectURL(blob);
+      };
+      catchRainbow2().catch((error) => {
+        console.log("error");
+        console.error(error);
+      });
+      catchRainbow2();
+    </script>
+  </body>
+</html>

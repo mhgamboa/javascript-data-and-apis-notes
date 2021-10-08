@@ -4,11 +4,16 @@ Thank you to The Coding Train for making a [Youtube playlist](https://www.youtub
 
 ## 1.1: fetch() - Working With Data & APIs in JavaScript
 
-- Javascript can use `Fetch` to send requests (aka communicate) to servers
+- Javascript can use `fetch()` to send requests (aka communicate) to servers
   - **Get** requests "ask" for data. **Post** requests "send" data
 - `fetch()`'s first argument is the path to a resource where you are trying to acquire data
-  - `fetch()` must be chained with one or more `.then()` to resolve the `promise` that fetch returns.
-  - `fetch()` must also be chained with `.catch()` to handle any errors that may arrise
+- The `response` that `fetch()` returns always needs to be parsed
+  - It can be parsed into a **blob** (example is used for images), **text**, **array stream**, or **json** (Which is very important!!)
+
+### Using `fetch()` with `.then()`
+
+- `fetch()` can be chained with one or more `.then()` statements to resolve the `promise` that fetch returns.
+- `fetch()` must also be chained with `.catch()` to handle any errors that may arrise
 
 EX:
 
@@ -17,9 +22,11 @@ const url = ""
 fetch(url).then(response => )
 ```
 
+### Using `fetch()` With `async` and `await`
+
 - You can also use async/await functions instead of `.then().catch()` chaining
 
-  - You still need to write a `.catch()`
+  - You will still need to write a `.catch()` method.
 
   ```
   async myFunction = () => {
