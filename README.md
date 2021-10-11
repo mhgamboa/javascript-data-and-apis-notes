@@ -1,6 +1,6 @@
 # Javascript Data and APIs Notes
 
-Thank you to The Coding Train for making a [Youtube playlist](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X) to teach me!!
+Thank you to The Coding Train (TCT) for making a [Youtube playlist](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X) to teach me!!
 
 ## 1.1: fetch() - Working With Data & APIs in JavaScript
 
@@ -39,3 +39,11 @@ fetch(url).then(response => )
       console.error(error)
   })
   ```
+
+## 1.2 Tabular Data - Working With Data & APIs in JavaScript
+
+Tip: when using a large CSV with lots of data, duplicate and delete 98% of the data so you can run practice tests on a smaller sample set
+
+- In this example TCT parses CSV with the `Response.text()` method with `array.prototype.split()` by splitting `'\n'` and `,` (new lines and commas)
+- **The important takeaway with this lesson is that you can fetch csv files in addition to json/images/etc.**
+  - You can use whatever you want to parse the CSV afterword: you can do it yourself, or use d3/p5.js/papaparser/etc.

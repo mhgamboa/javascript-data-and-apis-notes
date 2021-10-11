@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Poem</title>
+  </head>
+  <body>
+    <p id="poem"></p>
+    <script>
+      //   fetch("poem.txt")
+      //     .then((response) => response.text())
+      //     .then((text) => (document.querySelector("#poem").textContent = text))
+      //     .catch((err) => console.error(err));
+
+      const fetchPoem = async () => {
+        const response = await fetch("poem.txt");
+        const text = await response.text();
+        document.querySelector("#poem").textContent = text;
+      };
+      fetchPoem().catch((err) => console.error(err));
+    </script>
+  </body>
+</html>
